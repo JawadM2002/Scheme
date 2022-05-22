@@ -1,0 +1,13 @@
+(cons 'X '(a b c d))
+(cons'(a b c d)'X)
+(cons ' X (reverse '(a b c d )))
+(reverse (cons 'X (reverse '(a b c d))))
+
+(cons (cdr '(A B)) (car '(C D)))
+
+(define score ' ((10 5) (8 3) (10 10)))
+;;(map + (map car scores) (map cadr scores))
+
+(cdr (list (- 6 5) 1 (car '(2 3 4)) (/ 9 3) 4))
+
+(car (cdr (list (+ 2 6) (* 3 5) 9)))

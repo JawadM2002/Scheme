@@ -1,0 +1,29 @@
+;; output of filter expression
+(filter (lambda (lst) (equal? (car lst) (cdr lst))) '((A B) (C C) (D E) (F F)))
+
+;; Square numbers
+(map (lambda (a) (* a a)) '(1 2 3 4))
+
+;; Alphabet
+(define alphabet '((a b c) (d e f g) (h i j k l) (m n o) (p q r s t u) (v w x y z)))
+(map cadr alphabet) ;; car returns first element, cadr returns second element
+
+;; Question - Examine the following mystery functions and determine
+;; which of the statements below are true.
+(define (mystery-func lst)
+  (if (null? lst) lst
+      (mystery-func-helper lst '())))
+
+; Question - correct the list-reverse function
+(define (list-reverse lst)
+  (if (null? lst)
+      '()
+      (append (list-reverse (cdr lst))))
+              (list (car lst))
+(list-reverse '(1 2 3 4)))
+      
+(define (mystery-func-helper lst lst1)
+  (if (null? lst) lst1
+      (mystery-func-helper (cdr lst) (cons (car lst) lst1))))
+
+(mystery-func '(1 2 3 4 5 6))
